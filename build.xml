@@ -1,17 +1,17 @@
 <project default="jar">
 
 <target name="clean">
-<delete dir="**/build"/>
+<delete dir="/test1/build"/>
 </target>
 
 <target name="compile" depends="clean">
-<mkdir dir="**/build/classes"/>
-<javac srcdir="**/src" destdir="**/build/classes"/>
+<mkdir dir="/test1/build/classes"/>
+<javac srcdir="/test1/src" destdir="/test1/build/classes"/>
 </target>
 
 <target name="jar" depends="compile">
-<mkdir dir="**/build/jar"/>
- <jar destfile="**/build/jar/HelloWorld.jar" basedir="**/build/classes">
+<mkdir dir="/test1/build/jar"/>
+ <jar destfile="/test1/build/jar/HelloWorld.jar" basedir="/test1/build/classes">
           
     </jar>
     </target>

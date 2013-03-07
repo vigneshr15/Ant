@@ -19,7 +19,7 @@
 <target name="copy">
 <copy todir="/var/lib/jenkins/jobs/d/workspace/">
 <fileset dir="/var/lib/jenkins/jobs/b/workspace/">
-	<include name=/var/lib/jenkins/jobs/b/workspace/src/**"/>
+	<include name="/var/lib/jenkins/jobs/b/workspace/src/**"/>
 </fileset>
 </copy>
 
@@ -29,6 +29,6 @@
         <include name=/var/lib/jenkins/jobs/c/workspace/dist/**"/>
 </fileset>
 </copy>
-</target>
+/target>
 
 </project>

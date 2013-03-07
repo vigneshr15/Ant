@@ -1,7 +1,9 @@
-<project default="jar">
+<project default="copy">
 
 <target name="clean">
 <delete dir="./build"/>
+<delete dir="./dist"/>
+<delete dir="./copied"/>
 </target>
 
 <target name="compile" depends="clean">
@@ -10,10 +12,15 @@
 </target>
 
 <target name="jar" depends="compile">
-<mkdir dir="./build/jar"/>
- <jar destfile="./build/jar/HelloWorld.jar" basedir="./build/classes">
-          
-    </jar>
+<mkdir dir="./dist"/>
+ <jar destfile="./dist/HelloWorld.jar" basedir="./build/classes"/>
     </target>
+
+<target name="copy" depends="jar">
+<mkdir dir="./copied"/> 
+<copy todir="./copied">
+<fileset dir="./src"/>
+</copy>
+</target>
 
 </project>

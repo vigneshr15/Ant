@@ -25,8 +25,8 @@
 
 <copy todir="/var/lib/jenkins/jobs/d/workspace/">
 <fileset dir="/var/lib/jenkins/jobs/c/workspace/">
-        <include name=/var/lib/jenkins/jobs/c/workspace/build/**"/>
-        <include name=/var/lib/jenkins/jobs/c/workspace/dist/**"/>
+        <include name="/var/lib/jenkins/jobs/c/workspace/build/**"/>
+        <include name="/var/lib/jenkins/jobs/c/workspace/dist/**"/>
 </fileset>
 </copy>
 /target>

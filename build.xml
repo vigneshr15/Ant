@@ -1,33 +1,34 @@
-<project default="copy">
+<project default="jar">
 
 <target name="clean">
 <delete dir="./build"/>
 <delete dir="./dist"/>
-<delete dir="./copied"/>
 <delete dir="./src"/>
 </target>
 
-<target name="compile" depends="clean">
+<target name="compile" depends="copy">
+<delete dir="./build"/>
 <mkdir dir="./build/classes"/>
 <javac srcdir="./src" destdir="./build/classes"/>
 </target>
 
 <target name="jar" depends="compile">
+<delete dir="./dist"/>
 <mkdir dir="./dist"/>
  <jar destfile="./dist/HelloWorld.jar" basedir="./build/classes"/>
     </target>
 
 <target name="copy" depends="clean">
-<copy todir="/var/lib/jenkins/jobs/d/workspace/">
+<copy todir=".">
 <fileset dir="/var/lib/jenkins/jobs/b/workspace/">
-	<include name="/var/lib/jenkins/jobs/b/workspace/src/"/>
+	<include name="src/**"/>
 </fileset>
 </copy>
 
-<copy todir="/var/lib/jenkins/jobs/d/workspace/">
+<copy todir=".">
 <fileset dir="/var/lib/jenkins/jobs/c/workspace/">
-        <include name="/var/lib/jenkins/jobs/c/workspace/build"/>
-        <include name="/var/lib/jenkins/jobs/c/workspace/dist"/>
+        <include name="build/**"/>
+        <include name="dist/**"/>
 </fileset>
 </copy>
 </target>

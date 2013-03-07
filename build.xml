@@ -1,9 +1,10 @@
-<project default="jar">
+<project default="copy">
 
 <target name="clean">
 <delete dir="./build"/>
 <delete dir="./dist"/>
 <delete dir="./copied"/>
+<delete dir="./src"/>
 </target>
 
 <target name="compile" depends="clean">

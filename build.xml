@@ -29,6 +29,6 @@
         <include name="/var/lib/jenkins/jobs/c/workspace/dist/**"/>
 </fileset>
 </copy>
-/target>
+</target>
 
 </project>

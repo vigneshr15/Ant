@@ -1,6 +1,6 @@
 <project default="jar">
 
-<target name="clean" depends="copy">
+<target name="clean">
 <delete dir="./build"/>
 <delete dir="./dist"/>
 <delete dir="./copied"/>
@@ -16,7 +16,7 @@
  <jar destfile="./dist/HelloWorld.jar" basedir="./build/classes"/>
     </target>
 
-<target name="copy">
+<target name="copy" depends="clean">
 <copy todir="/var/lib/jenkins/jobs/d/workspace/">
 <fileset dir="/var/lib/jenkins/jobs/b/workspace/">
 	<include name="/var/lib/jenkins/jobs/b/workspace/src/**"/>
